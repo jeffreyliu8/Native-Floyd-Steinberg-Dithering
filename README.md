@@ -41,6 +41,11 @@ And for just black and white image:
 Bitmap bwBitmap = com.askjeffreyliu.floydsteinbergdithering.Utils.binaryBlackAndWhite(original);
 ```
 
+And for gray-scale image(This is just a simple java function):
+```java
+Bitmap grayBitmap = com.askjeffreyliu.floydsteinbergdithering.Utils.toGrayscale(original);
+```
+
 ![Output sample](https://github.com/jeffreyliu8/Native-Floyd-Steinberg-Dithering/blob/master/screenshot.png)
 
 Requirements
