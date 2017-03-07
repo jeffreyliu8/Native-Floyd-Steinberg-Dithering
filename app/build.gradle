@@ -21,6 +21,12 @@ android {
 
 }
 
+repositories {
+    maven {
+        url  "http://dl.bintray.com/jeffreyliu8/JeffLiuFloydSteinbergDithering"
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -30,5 +36,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
     testCompile 'junit:junit:4.12'
 
-    compile project(":floydsteinbergdithering")
+    //compile project(":floydsteinbergdithering")
+    compile 'com.github.jeffreyliu8.nfsd:floydsteinbergdithering:0.0.1@aar'
 }
