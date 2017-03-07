@@ -15,18 +15,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.lena);
-        Bitmap fsBitmap = Utils.floydSteinbergDithering(original);
-
-        // Example of a call to a native method
         ImageView fsImageView = (ImageView) findViewById(R.id.imageViewDither);
+        ImageView monoImageView = (ImageView) findViewById(R.id.imageViewMono);
+        ImageView grayImageView = (ImageView) findViewById(R.id.imageViewGray);
+
+        // get the bitmap of the girl
+        Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.lena);
+
+        // Example of a call to the library
+        Bitmap fsBitmap = Utils.floydSteinbergDithering(original);
         fsImageView.setImageBitmap(fsBitmap);
 
-
+        // Example of a call to the library
         Bitmap bwBitmap = Utils.binaryBlackAndWhite(original);
-
-        // Example of a call to a native method
-        ImageView monoImageView = (ImageView) findViewById(R.id.imageViewMono);
         monoImageView.setImageBitmap(bwBitmap);
+
+        // Example of a call to the library, this is just a simple android gray-scale function
+        Bitmap grayBitmap = Utils.toGrayscale(original);
+        grayImageView.setImageBitmap(grayBitmap);
     }
 }

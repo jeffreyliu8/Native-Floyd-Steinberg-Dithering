@@ -4,18 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.askjeffreyliu.myapplication.MainActivity"
-    tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context="com.askjeffreyliu.myapplication.MainActivity">
 
     <TextView
         android:id="@+id/sample_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Grayscale"
+        app:layout_constraintLeft_toLeftOf="@+id/imageViewGray"
+        app:layout_constraintRight_toRightOf="@+id/imageViewGray"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewGray" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="Original"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/imageViewOriginal"
+        app:layout_constraintRight_toRightOf="@+id/imageViewOriginal"
         app:layout_constraintTop_toBottomOf="@+id/imageViewOriginal" />
 
     <TextView
@@ -37,20 +49,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Black and white(not grayscale)"
+        android:text="Black and white"
         app:layout_constraintLeft_toLeftOf="@+id/imageViewMono"
         app:layout_constraintRight_toRightOf="@+id/imageViewMono"
         app:layout_constraintTop_toBottomOf="@+id/imageViewMono" />
 
     <ImageView
         android:id="@+id/imageViewDither"
-        android:layout_width="196dp"
-        android:layout_height="196dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sample_text"
@@ -58,19 +70,34 @@
 
     <ImageView
         android:id="@+id/imageViewMono"
-        android:layout_width="196dp"
-        android:layout_height="196dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sample_text"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/lena" />
 
     <ImageView
         android:id="@+id/imageViewOriginal"
-        android:layout_width="wrap_content"
-        android:layout_height="196dp"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lena" />
+
+    <ImageView
+        android:id="@+id/imageViewGray"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/lena" />
 
 </android.support.constraint.ConstraintLayout>
