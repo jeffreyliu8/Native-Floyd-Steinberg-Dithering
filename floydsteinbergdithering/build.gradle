@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 25
@@ -37,4 +39,50 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
     testCompile 'junit:junit:4.12'
+}
+
+group = 'com.github.jeffreyliu8.nfsd'
+version = '0.0.1'
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavaDocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath()
+            .join(File.pathSeparator))
+}
+
+task generateJavaDocsJar(type: Jar) {
+    from generateJavaDocs.destinationDir
+    classifier 'javadoc'
+}
+generateJavaDocsJar.dependsOn generateJavaDocs
+
+bintray {
+    user = 'jeffreyliu8'
+    key = ''
+    pkg {
+        repo = 'JeffLiuFloydSteinbergDithering'
+        name = 'com.github.jeffreyliu8.nfsd'
+
+        version {
+            name = '0.0.1'
+            desc = 'Initial commit and upload'
+            released  = new Date()
+            vcsTag = '0.0.1'
+        }
+
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/jeffreyliu8/Native-Floyd-Steinberg-Dithering'
+        websiteUrl = 'https://github.com/jeffreyliu8/Native-Floyd-Steinberg-Dithering'
+    }
+    configurations = ['archives']
+}
+
+artifacts {
+    archives generateJavaDocsJar
+    archives generateSourcesJar
 }
