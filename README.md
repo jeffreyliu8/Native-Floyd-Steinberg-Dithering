@@ -25,7 +25,7 @@ repositories {
 ##### Dependencies
 ```groovy
 dependencies {
-    compile 'com.github.jeffreyliu8.nfsd:floydsteinbergdithering:0.0.1@aar'
+    compile 'com.github.jeffreyliu8.nfsd:floydsteinbergdithering:0.0.2@aar'
 }
 ```
 
@@ -38,7 +38,7 @@ Bitmap fsBitmap = Utils.floydSteinbergDithering(original);
 
 And for just black and white image:
 ```java
-Bitmap bwBitmap = Utils.binaryBlackAndWhite(original);
+Bitmap bwBitmap = com.askjeffreyliu.floydsteinbergdithering.Utils.binaryBlackAndWhite(original);
 ```
 
 ![Output sample](https://github.com/jeffreyliu8/Native-Floyd-Steinberg-Dithering/blob/master/screenshot.png)
