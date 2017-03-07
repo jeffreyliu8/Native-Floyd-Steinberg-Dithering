@@ -13,11 +13,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        externalNativeBuild {
-            cmake {
-                cppFlags ""
-            }
-        }
+//        externalNativeBuild {
+//            cmake {
+//                cppFlags ""
+//            }
+//        }
     }
     buildTypes {
         release {
@@ -25,11 +25,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
-    }
+//    externalNativeBuild {
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
+//    }
 }
 
 dependencies {
@@ -42,7 +42,7 @@ dependencies {
 }
 
 group = 'com.github.jeffreyliu8.nfsd'
-version = '0.0.1'
+version = '0.0.2'
 
 task generateSourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -69,10 +69,10 @@ bintray {
         name = 'com.github.jeffreyliu8.nfsd'
 
         version {
-            name = '0.0.1'
-            desc = 'Initial commit and upload'
+            name = '0.0.2'
+            desc = 'Use precompiled shared library'
             released  = new Date()
-            vcsTag = '0.0.1'
+            vcsTag = '0.0.2'
         }
 
         licenses = ['Apache-2.0']

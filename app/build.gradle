@@ -37,5 +37,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     //compile project(":floydsteinbergdithering")
-    compile 'com.github.jeffreyliu8.nfsd:floydsteinbergdithering:0.0.1@aar'
+    compile 'com.github.jeffreyliu8.nfsd:floydsteinbergdithering:0.0.2@aar'
 }
