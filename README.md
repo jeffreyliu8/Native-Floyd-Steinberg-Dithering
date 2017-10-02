@@ -5,6 +5,10 @@ Android library for native floyd steinberg dithering on bitmap using JNI
 
 Why NFSD
 ----------------
+For those who don't know the purpose of Floyd-Steinberg algorithm, it is a algorithm to turn color image to black and white(NOT GRAYSCALE). 
+
+When would we use this? Well, for those e-ink displays like Amazon Kindle, they can't display color images, and just black and white would still look bad, this is when this algorithm is usful.
+
 I have tried using just java to run the algorithm, but it is slow. Not a good idea to run on main thread. 
 With NFSD, you can use Android Studio with instand run and still run these image filters with C++. It is small and easy to use.
 
