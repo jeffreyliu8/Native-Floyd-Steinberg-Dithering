@@ -14,11 +14,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-//        externalNativeBuild {
-//            cmake {
-//                cppFlags ""
-//            }
-//        }
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
     }
     buildTypes {
         release {
@@ -26,11 +26,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-//    externalNativeBuild {
-//        cmake {
-//            path "CMakeLists.txt"
-//        }
-//    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
 }
 
 dependencies {
@@ -41,49 +41,3 @@ dependencies {
     compile 'com.android.support:appcompat-v7:27.0.2'
     testCompile 'junit:junit:4.12'
 }
-
-//group = 'com.github.jeffreyliu8.nfsd'
-//version = '0.0.2'
-//
-//task generateSourcesJar(type: Jar) {
-//    from android.sourceSets.main.java.srcDirs
-//    classifier 'sources'
-//}
-//
-//task generateJavaDocs(type: Javadoc) {
-//    source = android.sourceSets.main.java.srcDirs
-//    classpath += project.files(android.getBootClasspath()
-//            .join(File.pathSeparator))
-//}
-//
-//task generateJavaDocsJar(type: Jar) {
-//    from generateJavaDocs.destinationDir
-//    classifier 'javadoc'
-//}
-//generateJavaDocsJar.dependsOn generateJavaDocs
-//
-//bintray {
-//    user = 'jeffreyliu8'
-//    key = ''
-//    pkg {
-//        repo = 'JeffLiuFloydSteinbergDithering'
-//        name = 'com.github.jeffreyliu8.nfsd'
-//
-//        version {
-//            name = '0.0.2'
-//            desc = 'Use precompiled shared library'
-//            released  = new Date()
-//            vcsTag = '0.0.2'
-//        }
-//
-//        licenses = ['Apache-2.0']
-//        vcsUrl = 'https://github.com/jeffreyliu8/Native-Floyd-Steinberg-Dithering'
-//        websiteUrl = 'https://github.com/jeffreyliu8/Native-Floyd-Steinberg-Dithering'
-//    }
-//    configurations = ['archives']
-//}
-//
-//artifacts {
-//    archives generateJavaDocsJar
-//    archives generateSourcesJar
-//}

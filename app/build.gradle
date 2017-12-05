@@ -21,12 +21,6 @@ android {
 
 }
 
-//repositories {
-//    maven {
-//        url  "http://dl.bintray.com/jeffreyliu8/JeffLiuFloydSteinbergDithering"
-//    }
-//}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -37,5 +31,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     implementation project(":floydsteinbergdithering")
-    //implementation 'com.github.jeffreyliu8.nfsd:floydsteinbergdithering:0.0.2@aar'
+    //implementation 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:v0.0.3'
 }
