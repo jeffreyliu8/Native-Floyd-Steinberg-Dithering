@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+
     defaultConfig {
         applicationId "com.askjeffreyliu.myapplication"
-        minSdkVersion 9
-        targetSdkVersion 25
+        minSdkVersion 14
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -21,21 +21,21 @@ android {
 
 }
 
-repositories {
-    maven {
-        url  "http://dl.bintray.com/jeffreyliu8/JeffLiuFloydSteinbergDithering"
-    }
-}
+//repositories {
+//    maven {
+//        url  "http://dl.bintray.com/jeffreyliu8/JeffLiuFloydSteinbergDithering"
+//    }
+//}
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.1'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
 
-    //compile project(":floydsteinbergdithering")
-    compile 'com.github.jeffreyliu8.nfsd:floydsteinbergdithering:0.0.2@aar'
+    implementation project(":floydsteinbergdithering")
+    //implementation 'com.github.jeffreyliu8.nfsd:floydsteinbergdithering:0.0.2@aar'
 }
