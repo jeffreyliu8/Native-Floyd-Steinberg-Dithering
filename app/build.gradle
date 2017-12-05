@@ -30,6 +30,6 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
 
-    implementation project(":floydsteinbergdithering")
-    //implementation 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:v0.0.3'
+    //implementation project(":floydsteinbergdithering")
+    implementation 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:v0.0.4'
 }
