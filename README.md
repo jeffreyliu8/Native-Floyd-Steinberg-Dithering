@@ -18,19 +18,20 @@ Using NFSD
 ### Setup
 In your app module build.gradle(before jcenter is ready)
 ```groovy
-repositories {
-    maven {
-        url  "http://dl.bintray.com/jeffreyliu8/JeffLiuFloydSteinbergDithering"
-    }
-}
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 ```
 
 
 ##### Dependencies
 ```groovy
-dependencies {
-    compile 'com.github.jeffreyliu8.nfsd:floydsteinbergdithering:0.0.2@aar'
-}
+	dependencies {
+	        compile 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:v0.0.4'
+	}
 ```
 
 A quick example is shown below:
