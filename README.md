@@ -1,7 +1,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 # Native-Floyd-Steinberg-Dithering
-Android library for native floyd steinberg dithering on bitmap using JNI
+Android library for native floyd steinberg dithering on bitmap using JNI/NDK
 
 Why NFSD
 ----------------
@@ -16,7 +16,6 @@ Using NFSD
 ----------------
 
 ### Setup
-In your app module build.gradle(before jcenter is ready)
 ```groovy
 	allprojects {
 		repositories {
@@ -55,7 +54,7 @@ Bitmap grayBitmap = com.askjeffreyliu.floydsteinbergdithering.Utils.toGrayscale(
 
 Requirements
 --------------
-Android 2.3, requires a minimum SDK version of 9
+Requires a minimum SDK version of 14
 
 Developed By
 -------
