@@ -24,7 +24,7 @@
 
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
-static int find_closest_palette_color(int value) {
+static uint32_t find_closest_palette_color(int value) {
     if (value < 128) {
         return 0xFF000000;
     }
@@ -55,8 +55,8 @@ static void floydSteinberg(AndroidBitmapInfo *info, void *pixels) {
         line = (uint32_t *) pixels;
         for (x = 0; x < info->width; x++) {
 
-            int oldpixel = d[y][x];
-            int newpixel = find_closest_palette_color(oldpixel);
+            uint32_t oldpixel = d[y][x];
+            uint32_t newpixel = find_closest_palette_color(oldpixel);
 
             // set the new pixel back in
             line[x] = newpixel;

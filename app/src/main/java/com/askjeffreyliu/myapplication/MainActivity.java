@@ -15,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView fsImageView = (ImageView) findViewById(R.id.imageViewDither);
-        ImageView monoImageView = (ImageView) findViewById(R.id.imageViewMono);
-        ImageView grayImageView = (ImageView) findViewById(R.id.imageViewGray);
+        ImageView fsImageView = findViewById(R.id.imageViewDither);
+        ImageView monoImageView = findViewById(R.id.imageViewMono);
+        ImageView grayImageView = findViewById(R.id.imageViewGray);
 
         // get the bitmap of the girl
         Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.lena);

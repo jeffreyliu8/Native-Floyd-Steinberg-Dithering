@@ -7,7 +7,7 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 
 /**
- * Created by jeffreyliu on 3/6/17.
+ * Created by Jeffrey Liu on 3/6/17.
  */
 
 public class Utils {
