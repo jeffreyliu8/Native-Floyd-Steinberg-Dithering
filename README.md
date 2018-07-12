@@ -2,18 +2,18 @@
 [![](https://jitpack.io/v/jeffreyliu8/Native-Floyd-Steinberg-Dithering.svg)](https://jitpack.io/#jeffreyliu8/Native-Floyd-Steinberg-Dithering)
 
 # Native-Floyd-Steinberg-Dithering
-Android library for native floyd steinberg dithering on bitmap using JNI/NDK
+Android library for floyd-steinberg dithering on bitmap using JNI/Cmake
 
-Why NFSD
+Why FSD
 ----------------
 For those who don't know the purpose of Floyd-Steinberg algorithm, it is a algorithm to turn color image to black and white(NOT GRAYSCALE). 
 
 When would we use this? Well, for those e-ink displays like Amazon Kindle, they can't display color images, and just black and white would still look bad, this is when this algorithm is usful.
 
 I have tried using just java to run the algorithm, but it is slow. Not a good idea to run on main thread. 
-With NFSD, you can use Android Studio with instand run and still run these image filters with C++. It is small and easy to use.
+This library is small and easy to use.
 
-Using NFSD
+Using FSD
 ----------------
 
 ### Setup
@@ -30,7 +30,7 @@ Using NFSD
 ##### Dependencies
 ```groovy
 	dependencies {
-	        compile 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:v0.0.4'
+	        compile 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:0.0.5'
 	}
 ```
 
@@ -66,7 +66,7 @@ Jeffrey Liu - <jeffreyliu8@gmail.com>
 License
 -------
 
-    Copyright 2017 Jeffrey Liu
+    Copyright 2018 Jeffrey Liu
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
