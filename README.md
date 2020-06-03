@@ -38,19 +38,19 @@ Using FSD
 
 A quick example is shown below:
 
-```java
-Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.lena);
-Bitmap fsBitmap = Utils.floydSteinbergDithering(original);
+```kotlin
+val original = BitmapFactory.decodeResource(resources, R.drawable.lena)
+val fsBitmap = Utils.floydSteinbergDithering(original)
 ```
 
 And for just black and white image:
-```java
-Bitmap bwBitmap = com.askjeffreyliu.floydsteinbergdithering.Utils.binaryBlackAndWhite(original);
+```kotlin
+val bwBitmap = Utils.binaryBlackAndWhite(original)
 ```
 
 And for gray-scale image(This is just a simple java function):
-```java
-Bitmap grayBitmap = com.askjeffreyliu.floydsteinbergdithering.Utils.toGrayscale(original);
+```kotlin
+val grayBitmap = Utils.toGrayscale(original)
 ```
 
 ![Output sample](https://github.com/jeffreyliu8/Native-Floyd-Steinberg-Dithering/blob/master/screenshot.png)
