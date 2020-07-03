@@ -32,7 +32,7 @@ Using FSD
 ##### Dependencies
 ```groovy
 	dependencies {
-	        compile 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:0.0.5'
+	        compile 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:1.0.0'
 	}
 ```
 
