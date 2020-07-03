@@ -36,5 +36,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0-rc01'
 
     implementation project(":floydsteinbergdithering")
-//    implementation 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:0.0.5'
+//    implementation 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:1.0.0'
 }
