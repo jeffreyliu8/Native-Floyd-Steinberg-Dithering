@@ -4,12 +4,17 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.askjeffreyliu.floydsteinbergdithering.Utils
-import kotlinx.android.synthetic.main.activity_main.*
+import com.askjeffreyliu.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
 
         // get the bitmap of the girl
@@ -19,18 +24,18 @@ class MainActivity : AppCompatActivity() {
 
         // Example of a call to the library
         val fsBitmap = Utils.floydSteinbergDithering(original)
-        imageViewDither.setImageBitmap(fsBitmap)
+        binding.imageViewDither.setImageBitmap(fsBitmap)
 
         // Example of a call to the library
 
         // Example of a call to the library
         val bwBitmap = Utils.binaryBlackAndWhite(original)
-        imageViewMono.setImageBitmap(bwBitmap)
+        binding.imageViewMono.setImageBitmap(bwBitmap)
 
         // Example of a call to the library, this is just a simple android gray-scale function
 
         // Example of a call to the library, this is just a simple android gray-scale function
         val grayBitmap = Utils.toGrayscale(original)
-        imageViewGray.setImageBitmap(grayBitmap)
+        binding.imageViewGray.setImageBitmap(grayBitmap)
     }
 }
