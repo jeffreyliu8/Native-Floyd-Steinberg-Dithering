@@ -63,7 +63,7 @@ static void floydSteinberg(AndroidBitmapInfo *info, void *pixels) {
             // set the new pixel back in
             line[x] = newpixel;
 
-            int err = oldpixel - newpixel;
+            int err = (int)(oldpixel - newpixel);
 
             if (x + 1 < w)
                 d[y][x + 1] = d[y][x + 1] + (int) (err * (7. / 16));
@@ -77,6 +77,13 @@ static void floydSteinberg(AndroidBitmapInfo *info, void *pixels) {
 
         pixels = (char *) pixels + info->stride;
     }
+
+    //Free each sub-array
+    for (int i = 0; i < info->height; ++i) {
+        delete[] d[i];
+    }
+    //Free the array of pointers
+    delete[] d;
 }
 
 static void global_mono(AndroidBitmapInfo *info, void *pixels) {
