@@ -12,8 +12,8 @@ For those who don't know the purpose of Floyd-Steinberg algorithm, it is a algor
 
 When would we use this? Well, for those e-ink displays like Amazon Kindle, they can't display color images, and just black and white would still look bad, this is when this algorithm is usful.
 
-I have tried using just java to run the algorithm, but it is slow. Not a good idea to run on main thread. 
-This library is small and easy to use.
+I have tried using just java to run the algorithm, but it is slow.
+This library is small and easy to use. Ideally you should NOT run this not on the main thread.
 
 Using FSD
 ----------------
