@@ -23,19 +23,19 @@ class MainActivity : AppCompatActivity() {
         // Example of a call to the library
 
         // Example of a call to the library
-        val fsBitmap = Utils.floydSteinbergDithering(original)
+        val fsBitmap = Utils().floydSteinbergDithering(original)
         binding.imageViewDither.setImageBitmap(fsBitmap)
 
         // Example of a call to the library
 
         // Example of a call to the library
-        val bwBitmap = Utils.binaryBlackAndWhite(original)
+        val bwBitmap = Utils().binaryBlackAndWhite(original)
         binding.imageViewMono.setImageBitmap(bwBitmap)
 
         // Example of a call to the library, this is just a simple android gray-scale function
 
         // Example of a call to the library, this is just a simple android gray-scale function
-        val grayBitmap = Utils.toGrayscale(original)
+        val grayBitmap = Utils().toGrayscale(original)
         binding.imageViewGray.setImageBitmap(grayBitmap)
     }
 }

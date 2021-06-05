@@ -32,7 +32,7 @@ Using FSD
 ##### Dependencies
 ```groovy
 	dependencies {
-	        compile 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:1.0.2'
+	        compile 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:1.0.3'
 	}
 ```
 
@@ -40,17 +40,17 @@ A quick example is shown below:
 
 ```kotlin
 val original = BitmapFactory.decodeResource(resources, R.drawable.lena)
-val fsBitmap = Utils.floydSteinbergDithering(original)
+val fsBitmap = Utils().floydSteinbergDithering(original)
 ```
 
 And for just black and white image:
 ```kotlin
-val bwBitmap = Utils.binaryBlackAndWhite(original)
+val bwBitmap = Utils().binaryBlackAndWhite(original)
 ```
 
 And for gray-scale image(This is just a simple java function):
 ```kotlin
-val grayBitmap = Utils.toGrayscale(original)
+val grayBitmap = Utils().toGrayscale(original)
 ```
 
 ![Output sample](https://github.com/jeffreyliu8/Native-Floyd-Steinberg-Dithering/blob/master/screenshot.png)
