@@ -14,7 +14,6 @@
 
 
 #include <jni.h>
-#include <time.h>
 
 #include <android/log.h>
 #include <android/bitmap.h>
@@ -37,14 +36,17 @@ static void floydSteinberg(AndroidBitmapInfo *info, void *pixels) {
 
     void *pixels2 = pixels;
 
-    uint32_t d[info->height][info->width];
+    auto **d = new uint32_t *[info->height];
+    for (int i = 0; i < info->height; ++i) {
+        d[i] = new uint32_t[info->width];
+    }
 
     for (y = 0; y < info->height; y++) {
         line = (uint32_t *) pixels2;
         for (x = 0; x < info->width; x++) {
 
             //extract the RGB values from the pixel
-            d[y][x] = 0xFF000000 | (line[x] & 0x00FFFFFF);
+            d[y][x] = 0xFF000000 | (line[x] & 0x00FFFFFFu);
         }
 
         pixels2 = (char *) pixels2 + info->stride;
@@ -83,7 +85,7 @@ static void global_mono(AndroidBitmapInfo *info, void *pixels) {
     for (y = 0; y < info->height; y++) {
         line = (uint32_t *) pixels;
         for (x = 0; x < info->width; x++) {
-            line[x] = find_closest_palette_color(line[x] & 0xFF);
+            line[x] = find_closest_palette_color((int) (line[x] & 0xFFu));
         }
 
         pixels = (char *) pixels + info->stride;
@@ -96,7 +98,7 @@ extern "C" {
 #endif
 
 void Java_com_askjeffreyliu_floydsteinbergdithering_Utils_binaryBlackAndWhiteNative(JNIEnv *env,
-                                                                                    jobject obj,
+                                                                                    jclass obj,
                                                                                     jobject bitmap) {
     AndroidBitmapInfo info;
     int ret;
@@ -121,7 +123,7 @@ void Java_com_askjeffreyliu_floydsteinbergdithering_Utils_binaryBlackAndWhiteNat
 }
 
 void Java_com_askjeffreyliu_floydsteinbergdithering_Utils_floydSteinbergNative(JNIEnv *env,
-                                                                               jobject obj,
+                                                                               jclass obj,
                                                                                jobject bitmap) {
     AndroidBitmapInfo info;
     int ret;
