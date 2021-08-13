@@ -10,7 +10,7 @@ Why FSD
 ----------------
 For those who don't know the purpose of Floyd-Steinberg algorithm, it is a algorithm to turn color image to black and white(NOT GRAYSCALE). 
 
-When would we use this? Well, for those e-ink displays like Amazon Kindle, they can't display color images, and just black and white would still look bad, this is when this algorithm is usful.
+When would we use this? Well, for those e-ink displays like Amazon Kindle, they can't display color images, and just black and white(see below) would still look bad, this is when this algorithm and library is usful.
 
 I have tried using just java to run the algorithm, but it is slow.
 This library is small and easy to use. Ideally you should NOT run this not on the main thread.
@@ -32,9 +32,11 @@ Using FSD
 ##### Dependencies
 ```groovy
 	dependencies {
-	        compile 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:1.0.3'
+		implementation 'com.github.jeffreyliu8.Native-Floyd-Steinberg-Dithering:final:1.1.0'
 	}
 ```
+
+The last working version is compile 'com.github.jeffreyliu8:Native-Floyd-Steinberg-Dithering:1.0.3'. Notice the 2 version formats are different!
 
 A quick example is shown below:
 
