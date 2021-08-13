@@ -59,4 +59,4 @@ val grayBitmap = Utils().toGrayscale(original)
 
 Requirements
 --------------
-Requires a minimum SDK version of 14
+Requires a minimum SDK version of 16 (14 should still work)
