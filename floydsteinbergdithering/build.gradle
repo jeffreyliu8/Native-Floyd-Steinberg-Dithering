@@ -43,8 +43,8 @@ afterEvaluate {
 
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.jeffreyliu8'
-                artifactId = 'final'
-                version = '1.1.2'
+                artifactId = 'release'
+                version = '1.1.3'
             }
             // Creates a Maven publication called “debug”.
             debug(MavenPublication) {
@@ -52,8 +52,8 @@ afterEvaluate {
                 from components.debug
 
                 groupId = 'com.github.jeffreyliu8'
-                artifactId = 'final-debug'
-                version = '1.1.2'
+                artifactId = 'debug'
+                version = '1.1.3'
             }
         }
     }
