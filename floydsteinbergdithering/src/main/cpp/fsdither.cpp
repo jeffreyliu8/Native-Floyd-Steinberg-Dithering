@@ -58,12 +58,12 @@ static void floydSteinberg(AndroidBitmapInfo *info, void *pixels) {
         for (x = 0; x < info->width; x++) {
 
             uint32_t oldpixel = d[y][x];
-            uint32_t newpixel = find_closest_palette_color(oldpixel);
+            uint32_t newpixel = find_closest_palette_color((int) oldpixel);
 
             // set the new pixel back in
             line[x] = newpixel;
 
-            int err = (int)(oldpixel - newpixel);
+            int err = (int) (oldpixel - newpixel);
 
             if (x + 1 < w)
                 d[y][x + 1] = d[y][x + 1] + (int) (err * (7. / 16));
