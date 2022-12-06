@@ -48,6 +48,6 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:1.5.0'
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.0'
 
-    implementation project(":floydsteinbergdithering")
-//    implementation 'com.github.jeffreyliu8.Native-Floyd-Steinberg-Dithering:final:1.1.5'
+//    implementation project(":floydsteinbergdithering")
+    implementation 'com.github.jeffreyliu8.Native-Floyd-Steinberg-Dithering:release:1.1.5'
 }
