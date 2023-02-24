@@ -30,5 +30,11 @@ class MainActivity : AppCompatActivity() {
         // Example of a call to the library, this is just a simple android gray-scale function
         val grayBitmap = Utils().toGrayscale(original)
         binding.imageViewGray.setImageBitmap(grayBitmap)
+
+        val inputString = "blahblahblah"
+        val input = inputString.toByteArray(charset("UTF-8"))
+        val output = Utils().myCompress(input)
+        val outputString = output.decodeToString()
+        println("jeff $outputString ${output.size}")
     }
 }

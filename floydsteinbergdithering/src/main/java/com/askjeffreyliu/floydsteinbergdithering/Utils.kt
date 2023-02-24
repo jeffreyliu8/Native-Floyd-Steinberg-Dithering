@@ -44,4 +44,20 @@ class Utils {
         c.drawBitmap(bmpOriginal, 0f, 0f, paint)
         return bmpGrayscale
     }
+
+    fun myCompress(input: ByteArray): ByteArray {
+        return deflateInit2(input)
+    }
+
+    fun myDeCompress(input: ByteArray): ByteArray {
+        return deflateInit2(input)
+    }
+
+    /**
+     * A native method that is implemented by the 'native-lib' native library,
+     * which is packaged with this application.
+     */
+    private external fun deflateInit2(input: ByteArray): ByteArray
+
+    private external fun inflateInit2(input: ByteArray): ByteArray
 }
