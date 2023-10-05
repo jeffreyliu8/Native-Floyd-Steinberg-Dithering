@@ -1,6 +1,10 @@
 package com.askjeffreyliu.floydsteinbergdithering
 
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.ColorMatrix
+import android.graphics.ColorMatrixColorFilter
+import android.graphics.Paint
 
 class Utils {
     init {
@@ -44,4 +48,11 @@ class Utils {
         c.drawBitmap(bmpOriginal, 0f, 0f, paint)
         return bmpGrayscale
     }
+
+    external fun addListener(jnicallback: Jnicallback)
+    external fun changeValue(value:Int)
+}
+
+interface Jnicallback {
+    fun callbackwithValue(data: String)
 }

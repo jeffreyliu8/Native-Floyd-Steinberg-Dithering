@@ -105,7 +105,7 @@ extern "C" {
 #endif
 
 void Java_com_askjeffreyliu_floydsteinbergdithering_Utils_binaryBlackAndWhiteNative(JNIEnv *env,
-                                                                                    jclass obj,
+                                                                                    jobject obj,
                                                                                     jobject bitmap) {
     AndroidBitmapInfo info;
     int ret;
@@ -130,7 +130,7 @@ void Java_com_askjeffreyliu_floydsteinbergdithering_Utils_binaryBlackAndWhiteNat
 }
 
 void Java_com_askjeffreyliu_floydsteinbergdithering_Utils_floydSteinbergNative(JNIEnv *env,
-                                                                               jclass obj,
+                                                                               jobject obj,
                                                                                jobject bitmap) {
     AndroidBitmapInfo info;
     int ret;
@@ -158,3 +158,30 @@ void Java_com_askjeffreyliu_floydsteinbergdithering_Utils_floydSteinbergNative(J
 }
 #endif
 
+
+static JavaVM *jvm = nullptr;
+jclass store_listener = nullptr;
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_askjeffreyliu_floydsteinbergdithering_Utils_addListener(JNIEnv *env, jobject thiz,
+                                                                 jobject jnicallback) {
+
+    env->GetJavaVM(&jvm);
+    store_listener = static_cast<jclass>(env->NewGlobalRef(jnicallback));
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_askjeffreyliu_floydsteinbergdithering_Utils_changeValue(JNIEnv *env, jobject thiz,
+                                                                 jint value) {
+    if (store_listener != nullptr) {
+        jclass clazz = env->GetObjectClass(store_listener);
+        jmethodID store_method = env->GetMethodID(clazz, "callbackwithValue",
+                                                  "(Ljava/lang/String;)V");
+        jstring jstr = env->NewStringUTF("Some callback");
+        env->CallVoidMethod(store_listener, store_method, jstr);
+    } else {
+
+    }
+}
