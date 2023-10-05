@@ -49,10 +49,10 @@ class Utils {
         return bmpGrayscale
     }
 
-    external fun addListener(jnicallback: Jnicallback)
-    external fun changeValue(value:Int)
+    external fun addListener(jniCallback: JniCallback)
+    external fun changeValue(stringData: String, intData: Int, byteArray: ByteArray)
 }
 
-interface Jnicallback {
-    fun callbackwithValue(data: String)
+interface JniCallback {
+    fun callback(data: String, data2: Int, data3: ByteArray)
 }

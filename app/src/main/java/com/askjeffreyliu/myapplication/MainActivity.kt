@@ -3,7 +3,7 @@ package com.askjeffreyliu.myapplication
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.askjeffreyliu.floydsteinbergdithering.Jnicallback
+import com.askjeffreyliu.floydsteinbergdithering.JniCallback
 import com.askjeffreyliu.floydsteinbergdithering.Utils
 import com.askjeffreyliu.myapplication.databinding.ActivityMainBinding
 
@@ -35,13 +35,13 @@ class MainActivity : AppCompatActivity() {
         val util = Utils()
         util.addListener(myListener)
         binding.imageViewOriginal.setOnClickListener {
-            util.changeValue(19)
+            util.changeValue(stringData = "test", intData = 19, byteArray = ByteArray(size = 17))
         }
     }
 
-    private val myListener: Jnicallback = object : Jnicallback {
-        override fun callbackwithValue(data: String) {
-            println("jeff is calling callback with data: $data")
+    private val myListener: JniCallback = object : JniCallback {
+        override fun callback(data: String, data2: Int, data3: ByteArray) {
+            println("jeff got callback $data $data2 and byte size ${data3.size}")
         }
     }
 }
